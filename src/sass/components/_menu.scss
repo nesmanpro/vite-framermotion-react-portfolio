@@ -1,0 +1,119 @@
+.menu {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+
+
+    &-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2em;
+        display: flex;
+        justify-content: space-between;
+        z-index: 10;
+    }
+
+    &-close, &-open {
+        cursor: pointer;
+    }
+
+    &-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 2em;
+        background-color: var(--color-background--red);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+        z-index: 20;
+        &-bar {
+            display: flex;
+            justify-content: space-between;
+
+            .menu-logo {
+                flex: 20%;
+            }
+
+            .menu-links {
+                flex: 60%;
+                font-size: 5em;
+                text-transform: uppercase;
+                color: var(--color-primary);
+                line-height: 90%;
+                .menu-link div{
+                    display: block;
+                    position: relative;
+                    overflow: hidden;
+                    p{
+                        transform: translateY(100px);
+                    }
+                }
+                .menu-text-double  {
+                    position: absolute;
+                    transform: translateY(100px);
+                    inset: 0;
+                }
+            }
+
+            .menu-close {
+                flex: 20%;
+                text-align: end;
+            }
+        }
+
+        &-sub {
+            position: fixed;
+            bottom: 5%;
+            left: 0;
+            width: 100%;
+            padding: 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+
+            .sub-close {
+                font-size: 13rem;
+                font-weight: lighter;
+                -webkit-text-stroke: 7px #d67b64;
+                line-height: 70%;
+                cursor: pointer;
+            }
+
+            .sub-socials {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                a {
+                    display: block;
+                    position: relative;
+                    overflow: hidden;
+                    div:nth-child(1) {
+                        position: absolute;
+                        inset: 0;
+                    }
+                }
+            }
+            
+            .sub-contacts {
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+        
+    }
+
+}
+
+.logo{
+    height: 5rem;
+}
+
+.hide{
+    display: none;
+}
