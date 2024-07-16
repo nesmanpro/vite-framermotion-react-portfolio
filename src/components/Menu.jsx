@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useAnimate, stagger, motion, transform } from "framer-motion";
+import { useAnimate, stagger, motion, spring } from "framer-motion";
 import logo from '../assets/logo2.svg'
 import { Link } from 'react-router-dom';
 
@@ -31,12 +31,13 @@ function useMenuAmination(isMenuOpen) {
             });
 
         animate('.menu-text', isMenuOpen
-            ? { opacity: 1, y: 0, }
-            : { opacity: 0, y: 100, },
+            ? { opacity: 1, y: 0 }
+            : { opacity: 0, y: 100 },
             {
+
                 duration: 0.2,
                 delay: isMenuOpen ? staggerOpenMenu : staggerCloseMenu,
-                // transition: { bounceStiffness: 500, bounceDamping: 20 }
+
             });
 
         animate('.menu-overlay-sub',
@@ -47,6 +48,7 @@ function useMenuAmination(isMenuOpen) {
                 duration: 0.2,
                 delay: isMenuOpen ? 0.35 : 0,
             })
+
     }, [isMenuOpen]);
 
     return scope;
@@ -62,6 +64,7 @@ const Menu = () => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }
+
 
 
 

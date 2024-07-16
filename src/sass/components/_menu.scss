@@ -15,7 +15,8 @@
         z-index: 10;
     }
 
-    &-close, &-open {
+    &-close,
+    &-open {
         cursor: pointer;
     }
 
@@ -29,6 +30,7 @@
         background-color: var(--color-background--red);
         clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
         z-index: 20;
+
         &-bar {
             display: flex;
             justify-content: space-between;
@@ -43,15 +45,18 @@
                 text-transform: uppercase;
                 color: var(--color-primary);
                 line-height: 90%;
-                .menu-link div{
+
+                .menu-link div {
                     display: block;
                     position: relative;
                     overflow: hidden;
-                    p{
+
+                    p {
                         transform: translateY(100px);
                     }
                 }
-                .menu-text-double  {
+
+                .menu-text-double {
                     position: absolute;
                     transform: translateY(100px);
                     inset: 0;
@@ -87,17 +92,19 @@
                 display: flex;
                 flex-direction: column;
                 overflow: hidden;
+
                 a {
                     display: block;
                     position: relative;
                     overflow: hidden;
+
                     div:nth-child(1) {
                         position: absolute;
                         inset: 0;
                     }
                 }
             }
-            
+
             .sub-contacts {
                 display: flex;
                 flex-direction: column;
@@ -105,15 +112,230 @@
 
         }
 
-        
+
     }
 
 }
 
-.logo{
+.logo {
     height: 5rem;
 }
 
-.hide{
+.hide {
     display: none;
+}
+
+/* ----------- Media Queries ----------- */
+
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {}
+
+/* Desktops and laptops ----------- */
+@media only screen and (max-width: 1824px) and (min-width: 650px) {}
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-width: 1224px) and (min-width: 650px) and (orientation : portrait) {
+    .menu {
+
+        &-overlay {
+            
+            &-bar {
+
+                .menu-links {
+                    flex: 40%;
+                    margin-top: 1em;
+                    font-size: 5.5em;
+                    text-transform: uppercase;
+                    color: var(--color-primary);
+                    line-height: 90%;
+
+                }
+
+            }
+
+            &-sub {
+                bottom: 5%;
+                padding: 2em;
+            }
+
+            .sub-close {
+                font-size: 7em;
+                font-weight: lighter;
+                -webkit-text-stroke: 6px #d67b64;
+                line-height: 70%;
+            }
+
+            .sub-reel {
+                display: none;
+            }
+
+        }
+
+    }
+
+    .logo {
+        height: 3.5em;
+    }
+
+}
+
+/* iPads (Landscape) ----------- */
+@media only screen and (max-height: 1224px) and (min-height: 650px) and (orientation : landscape) {
+    .menu {
+
+        &-overlay {
+
+
+            .sub-close {
+                font-size: 7em;
+                -webkit-text-stroke: 6px #d67b64;
+            }
+
+        }
+
+    }
+
+    .logo {
+        height: 3.5em;
+    }
+
+}
+
+/* Smartphones ----------- */
+@media only screen and (max-width: 650px) and (min-width: 520px) {}
+
+
+/* Smallest Smartphones ----------- */
+@media screen and (max-width: 450px) and (orientation : portrait) {
+
+    .menu {
+
+        &-overlay {
+            
+            &-bar {
+
+
+                .menu-links {
+                    flex: 40%;
+                    margin-top: 2em;
+                    font-size: 3em;
+                    text-transform: uppercase;
+                    color: var(--color-primary);
+                    line-height: 90%;
+
+                }
+
+            }
+
+            &-sub {
+                bottom: 5%;
+                padding: 2em;
+
+                .sub-close, .sub-reel {
+                    display: none;
+                }
+
+            }
+
+        }
+
+    }
+
+    .logo {
+        height: 2.5em;
+    }
+
+}
+
+/* Smallest Smartphones Landscape ----------- */
+@media screen and (max-height: 450px) and (orientation : landscape) {
+
+    .menu {
+
+        &-overlay {
+            
+            &-bar {
+
+                .menu-links {
+                    font-size: 3em;
+                }
+
+            }
+
+            &-sub {
+                bottom: 5%;
+                padding: 2em;
+
+                .sub-close {
+                    font-size: 13rem;
+                    font-weight: lighter;
+                    -webkit-text-stroke: 4px #d67b64;
+                    line-height: 70%;
+                }
+
+                .sub-reel {
+                display: none;
+                }
+
+            }
+
+        }
+    }
+
+    .logo {
+        height: 2.5em;
+    }
+
+}
+
+/* Smallest Old Smartphones Landscape ----------- */
+@media screen and (max-height: 400px) and (orientation : landscape) {
+
+    .menu {
+
+        &-bar {
+            padding-top: 1em;
+        }
+    
+        &-overlay {
+            padding-top: 1em;
+
+            &-sub {
+                bottom: 1%;
+                padding: 2em;
+
+                .sub-close {
+                    font-size: 18rem;
+                    -webkit-text-stroke: 5px #d67b64;
+                }
+            }
+        }
+    }
+
+}
+
+/* Smallest Old Smartphones Portrait ----------- */
+@media screen and (max-width: 400px) and (orientation : portrait) {
+
+    .menu {
+        .menu-links {
+            font-size: 2.6em;
+        }
+
+        &-bar {
+            padding: 1em;
+        }
+    
+        &-overlay {
+            padding: 1em;
+
+            &-sub {
+                bottom: 1%;
+                padding: 2em;
+
+            }
+        }
+    }
+
 }
